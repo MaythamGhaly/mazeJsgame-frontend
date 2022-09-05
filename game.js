@@ -13,15 +13,14 @@ window.addEventListener("load", function () {
                 boundary[i].addEventListener("mouseover",oups)
                 End.addEventListener("mouseover",congrats)
             }
-            // End.addEventListener("mouseover",congrats)
         }
-
         function oups(){
             c=c-10
             if (c>0){
-                status.innerHTML="You lost(10pts),your score is"+c+"moving your mouse over the S to continue. (Be sure to avoid the walls!),click on S to reset the score."
+                status.innerHTML="OUPS!! You lost 10pts,your score is"+c+"moving your mouse over the S to continue. (Be sure to avoid the walls!),click on S to reset the score."
             }
             else if (c<0){
+                status.innerHTML="you lost:( moving your mouse over the S to restart."
                 reset()
             }
             else{
@@ -40,10 +39,9 @@ window.addEventListener("load", function () {
             }
             play()
         }
-        
         function congrats(){
             c=c+5
-            status.innerHTML="congrats!your scor is "+c+"pts,moving your mouse over the S to play again.(Be sure to avoid the walls!)"
+            status.innerHTML="congrats !! your scor is "+c+"pts,moving your mouse over the S to play again.(Be sure to avoid the walls!).click on S to reset the score."
             start.addEventListener("mouseover",play)
             start.addEventListener("click",reset);
         }
@@ -51,16 +49,6 @@ window.addEventListener("load", function () {
             c=0
             play
         }
-
-            
-        function p(){
-            start.style.color="red"
-            status.innerHTML="Guide the mouse cursor to the end area with out touch the walls"
-                
-            for ( var i=0; i<boundaries.length; i++){
-                boundaries[i].addEventListener("mouseover",lose())
-            }}
-
 })
         
     
